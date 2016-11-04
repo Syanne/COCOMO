@@ -9,28 +9,27 @@ namespace cocomo.Models.ItemModels
     [XmlRoot("indexes")]
     public class CocomoIIPAItem
     {
-        [XmlAttribute]
-        public int ID { get; set; }
+        public double SelectedItem { get; set; }
 
         [XmlAttribute]
         public string name { get; set; }
         
         [XmlAttribute]
-        public double? verylow { get; set; }
+        public double verylow { get; set; }
 
         [XmlAttribute]
-        public double? low { get; set; }
+        public double low { get; set; }
 
         [XmlAttribute]
-        public double? nominal { get; set; }
+        public double nominal { get; set; }
 
         [XmlAttribute]
-        public double? high { get; set; }
+        public double high { get; set; }
 
         [XmlAttribute]
-        public double? veryhigh { get; set; }
+        public double veryhigh { get; set; }
 
         [XmlAttribute]
-        public double? extrahigh { get; set; }
+        public double extrahigh { get; set; }
     }
 }

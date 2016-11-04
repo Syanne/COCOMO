@@ -205,15 +205,13 @@
     <Compile Include="Models\GroupModels\BasicIndexesGroup.cs" />
     <Compile Include="Models\GroupModels\CocomoIIPAGroup.cs" />
     <Compile Include="Models\GroupModels\CocomoIIEarlyDesignGroup.cs" />
-    <Compile Include="Models\GroupModels\CocomoIIScaleGroup.cs" />
     <Compile Include="Models\GroupModels\IntermediateIndexesGroup.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ItemModels\BasicIndexesItem.cs" />
     <Compile Include="Models\ItemModels\CocomoIIPAItem.cs" />
     <Compile Include="Models\ItemModels\CocomoIIScaleItem.cs" />
-    <Compile Include="Models\ItemModels\CocomoIIEarlyDesignItem.cs" />
+    <Compile Include="Models\ItemModels\CocomoIIEDItem.cs" />
     <Compile Include="Models\ItemModels\IntermediateValueItem.cs" />
-    <Compile Include="Models\ItemModels\IntermediateIndexesItem.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\ResultModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -267,8 +265,10 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Service References\Application Insights\ConnectedService.json" />
     <Content Include="Views\Home\BasicIndexes.cshtml" />
-    <Content Include="Views\Home\BasicIndexesTable.cshtml" />
     <Content Include="Views\Home\Intermediate.cshtml" />
+    <Content Include="Views\Home\Result.cshtml" />
+    <Content Include="Views\Home\CocomoIIEarlyDesign.cshtml" />
+    <Content Include="Views\Home\CocomoIIPA.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

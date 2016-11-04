@@ -2,30 +2,127 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
-
 <div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+    <h1>COCOMO</h1>
+    <p class="lead">Це конструктивна модель оцінки вартості, розроблена на початку 80-х років Баррі Боемом для оцінки трудомісткості розробки програмних продуктів. Вона заснована на статистичному аналізі фактичних даних по виконанню 63 проектів в компанії TRW Aerospace, де Баррі Боем був директором відділу досліджень програмного забезпечення і технологій.</p>
+</div>
+    <div class="row">
+        <h3>@Html.ActionLink("Базовий COCOMO", "BasicIndexes", "Home")</h3>
+        <p> Модель цього рівня – двохпараметрична. Як параметри виступають тип проекту і обсяг програми (число рядків коду). </p>
+        <ul>
+            <li> Поширений тип характеризується тим, що проект виконується невеликою групою фахівців, що мають досвід у створенні подібних виробів і досвід застосування технологічних засобів. Умови роботи стабільні, і виріб має відносно невисоку складність.</li>
+            <li>Вбудований тип характеризується дуже жорсткими вимогами до програмного продукту, інтерфейсу, параметрів ЕОМ. Як правило, у таких програм висока ступінь новизни і планування робіт здійснюється при недостатній інформації, як про сам продукт, так і про умови роботи. Вбудований проект вимагає великих витрат на зміни та виправлення.</li>
+            <li> Напівнезалежний тип займає проміжне положення між поширеним і вбудованим – це проекти середньої складності. Виконавці знайомі лише з деякими характеристиками (або компонентами) створюваної системи, мають середній досвід роботи з подібними виробами, виріб має елемент новизни. Тільки частина вимог до виробу жорстко фіксується, в іншому розробки мають ступені вибору. </li>
+        </ul>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+
+    <div class="row">
+        <h3>@Html.ActionLink("Проміжний COCOMO", "Intermediate", "Home")</h3>
+        <p>  На цьому рівні базова модель уточнена за рахунок введення додаткових 15 «атрибутів вартості» (або факторів витрат)  Cost  Drivers  (CDk), які згруповані за чотирма категоріями </p>
+            <ul>
+                <li>
+                    Характеристики продукту (Product Аttributes):
+                    <ul>
+                        <li>необхідна надійність ПЗ (Required Software Reliability);</li>
+                        <li>розмір БД додатку (Size of Application Database); </li>
+                        <li>складність продукту (Complexity of the Product).</li>
+                    </ul>
+                </li>
+                <li>
+                    Характеристики апаратного забезпечення (Hardware Аttributes): 
+                    <ul>
+                        <li>обмеження швидкодії при виконанні програми (Run-Time Performance Constraints); </li>
+                        <li>обмеження пам'яті (Memory Constraints); </li>
+                        <li>нестійкість оточення віртуальної машини (Volatility of the Virtual Machine Environment); </li>
+                        <li>необхідний час відновлення (Required Turnabout Time). </li>
+                    </ul>
+                </li>
+                <li>Характеристики персоналу (Personnel Аttributes):
+                    <ul>
+                        <li>аналітичні здібності (Analyst Capability); </li>
+                        <li>здібності до розробки ПЗ (Software Engineer Capability); </li>
+                        <li>досвід розробки (Applications Experience); </li>
+                        <li>досвід використання віртуальних машин (Virtual Machine Experience); </li>
+                        <li>досвід розробки на мовах програмування (Programming Language Experience).</li>
+                    </ul>
+                </li>
+                <li>
+                    параметри проекту:
+                    <ul>
+                        <li>використання інструментарію розробки ПЗ (Use of Software Tools);</li>
+                        <li>застосування методів розробки ПЗ (Application of Software Engineering Methods); </li>
+                        <li>вимоги дотримання графіка розробки (Required Development Schedule). </li>
+                    </ul>
+                </li>
+            </ul>
     </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+
+    <div class="row">
+        <h3>@Html.ActionLink("COCOMO II: Попередня оцінка на початковій фазі ", "CocomoIIEarlyDesign", "Home")</h3>
+        <p> Для цієї оцінки необхідно оцінити для проекту рівень семи множників трудомісткості:</p>
+            <ul>
+                <li>параметри персоналу:
+                    <ul>
+                        <li>PERS (Personnel Capability) – кваліфікація персоналу (Extra Low – аналітики і програмісти мають нижчу кваліфікацію, плинність більше 45%; Extra High – аналітики і програмісти мають вищу кваліфікацію, плинність менше 4%);</li>
+                        <li>PREX (Personnel Experience) – досвід персоналу (Extra Low – новий додаток, інструменти та платформа; Extra High – додаток, інструменти та платформа добре відомі);</li>
+                    </ul>
+                </li>
+                <li>параметри продукту:
+                    <ul>
+                        <li>RCPX (Product Reliability and Complexity) – складність і надійність продукту (Extra Low – продукт простий, спеціальних вимог по надійності немає, БД маленька, документація не потрібно; Extra High – продукт дуже складний, вимоги щодо надійності жорсткі, БД надвелика, документація потрібна в повному обсязі); ‒</li>
+                        <li>RUSE (Developed for Reusability) – розробка для повторного використання (Low – не вимагається; Extra High – передбачається перевикористання в інших продуктах);</li>
+                    </ul>
+                </li>
+                <li> параметри платформи:
+                    <ul>
+                        <li>PDIF (Platform Difficulty) – складність платформи розробки (Extra Low – спеціальні обмеження по пам'яті і швидкодії відсутні, платформа стабільна; Extra High – жорсткі обмеження по пам'яті і швидкодії, платформа нестабільна);</li>
+                    </ul>
+                </li>
+                <li>параметри проекту:
+                    <ul>
+                        <li>FCIL (Facilities) – обладнання (Extra Low – інструменти найпростіші, комунікації утруднені; Extra High –- інтегровані засоби підтримки життєвого циклу, інтерактивні мультимедіа комунікації);</li>
+                        <li>SCED (Required Development Schedule) - потрібне виконання графіка робіт (Very Low – 75% від номінальної тривалості; Very High – 160% від номінальної тривалості).</li>
+                    </ul>
+                </li>
+            </ul>
     </div>
+
+    <div class="row ">
+        <h3> @Html.ActionLink("COCOMO II: Стадія детальної оцінки після опрацювання архітектури", "CocomoIIPA", "Home")</h3>
+        <p> Для цієї оцінки необхідно оцінити для проекту рівень сімнадцяти множників трудомісткості :</p>
+            <ul>
+                <li> параметри персоналу: 
+                    <ul>
+                        <li>Analyst Capability (ACAP) - можливості аналітика;</li>
+                        <li>Applications Experience (AEXP) - досвід розробки додатків;</li>
+                        <li>Programmer Capability (PCAP) - можливості програміста;</li>
+                        <li>Personnel Continuity (PCON) - тривалість роботи персоналу;</li>
+                        <li>Platform Experience (PEXP) - досвід роботи з платформою;</li>
+                        <li>Language and Tool Experience (LTEX) - досвід використання мови програмування та інструментальних засобів.</li>
+               </ul>
+                    </li>
+                <li> параметри продукту: 
+                    <ul>
+                        <li>Required Software Reliability (RELY) - необхідна надійність програми;</li>
+                        <li>Database Size (DATA) - розмір бази даних;</li>
+                        <li>Software Product Complexity (CPLX) - складність програми;</li>
+                        <li>Required Reusability (RUSE) - необхідна можливість багаторазового використання;</li>
+                        <li> ocumentation Match to Life-Cycle Needs (DOCU) - відповідність документації потребам життєвого циклу.</li>
+                    </ul>
+                </li>
+                <li>  параметри платформи:
+                    <ul>
+                        <li>Execution Time Constraint (TIME) - обмеження часу виконання;</li>
+                        <li>Main Storage Constraint (STOR) - обмеження пам'яті;</li> 
+                        <li>Platform Volatility (PVOL) - змінюваність платформи.</li>
+                     </ul>
+                </li>
+                <li>параметри проекту: 
+                <ul>                    
+                    <li>Use of Software Tools (TOOL) - використання інструментальних програмних засобів;</li>
+                    <li>Multisite Development (SITE) - багатоабонентська (віддалена) розробка;</li> 
+                    <li>Required Development Schedule (SCED) - потрібне виконання графіка робіт.</li> 
+                 </ul>
+               </li>
+           </ul>
 </div>

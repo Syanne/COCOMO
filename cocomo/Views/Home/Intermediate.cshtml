@@ -21,9 +21,11 @@
         {
             <tr>
                 <td class="name">
+                    <label>
                         @Html.HiddenFor(x => x.SmallTable[i].ID)
                         @Html.RadioButtonFor(r => r.SelectedIndexes, Model.SmallTable[i].ID)
                         @Html.HiddenFor(x => x.SmallTable[i].name) <b>@Model.SmallTable[i].name</b>
+                    </label>
                 </td>
                 <td class="td" >@Html.HiddenFor(x => x.SmallTable[i].a) @Model.SmallTable[i].a</td>
                 <td class="td">@Html.HiddenFor(x => x.SmallTable[i].b) @Model.SmallTable[i].b</td>
@@ -33,7 +35,7 @@
         }
     </table>
 
-    @*bit table*@
+    @*big table*@
     <table class="table-bordered indexes-table">
         <tr>
             <td class="name"><b>Атрибути вартості</b></td>
@@ -78,5 +80,5 @@
 
     @Html.HiddenFor(x => x.TM)
     @Html.HiddenFor(x => x.PM)
-    <input type="submit" value="Save" />
+    <input type="submit" value="Розрахувати" />
 </form>

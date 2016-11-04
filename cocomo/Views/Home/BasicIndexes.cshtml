@@ -19,9 +19,11 @@
         {
             <tr>
                 <td class="name">
-                    @Html.HiddenFor(x => x.Indexes[i].ID)
-                    @Html.RadioButtonFor(r => r.SelectedIndexes, Model.Indexes[i].ID)
-                    @Html.HiddenFor(x => x.Indexes[i].name) <b>@Model.Indexes[i].name</b>
+                    <label>
+                        @Html.HiddenFor(x => x.Indexes[i].ID)
+                        @Html.RadioButtonFor(r => r.SelectedIndexes, Model.Indexes[i].ID)
+                        @Html.HiddenFor(x => x.Indexes[i].name) <b>@Model.Indexes[i].name</b>
+                    </label>     
                 </td>
                 <td class="td">@Html.HiddenFor(x => x.Indexes[i].a) @Model.Indexes[i].a</td>
                 <td class="td">@Html.HiddenFor(x => x.Indexes[i].b) @Model.Indexes[i].b</td>

@@ -6,10 +6,7 @@ namespace cocomo.Models.ItemModels
     public class IntermediateValueItem
     {
         public double SelectedItem { get; set; }
-
-        [XmlAttribute]
-        public int ID { get; set; }
-
+        
         [XmlAttribute]
         public string name { get; set; }
 

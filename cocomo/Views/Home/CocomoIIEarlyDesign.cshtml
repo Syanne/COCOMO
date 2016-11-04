@@ -1,0 +1,106 @@
+﻿@model cocomo.Models.GroupModels.CocomoIIEDGroup
+@{
+    ViewBag.Title = "CocomoIIEarlyDesign";
+}
+
+<h2>COCOMO II: Попередня оцінка на початковій фазі </h2>
+<form method="post" action="">
+    <div style="position:relative">
+        <label>KSLOC: </label> @Html.EditorFor(x => x.Size) <br />
+
+        @*bit table*@
+        <table class="table-bordered indexes-table">
+            <tr>
+                <td class="name"><b>Атрибути вартості</b></td>
+                <td class="td" width="50px">extra low</td>
+                <td class="td" width="50px">very low</td>
+                <td class="td" width="50px">low</td>
+                <td class="td" width="50px">nominal</td>
+                <td class="td" width="50px">high</td>
+                <td class="td" width="50px">very high</td>
+                <td class="td" width="50px">extra high</td>
+            </tr>
+            @for (var i = 0; i < @Model.CocomoIIEDItems.Count(); i++)
+        {
+        <tr>
+            <td class="name">@Html.HiddenFor(x => x.CocomoIIEDItems[i].name) <b>@Model.CocomoIIEDItems[i].name</b></td>
+            <td class="td">
+                @Html.HiddenFor(x => x.CocomoIIEDItems[i].extralow)
+                @Html.RadioButtonFor(r => r.CocomoIIEDItems[i].SelectedItem, Model.CocomoIIEDItems[i].extralow)
+            </td>
+            <td class="td">
+                @Html.HiddenFor(x => x.CocomoIIEDItems[i].verylow)
+                @Html.RadioButtonFor(r => r.CocomoIIEDItems[i].SelectedItem, Model.CocomoIIEDItems[i].verylow)
+            </td>
+            <td class="td">
+                @Html.HiddenFor(x => x.CocomoIIEDItems[i].low)
+                @Html.RadioButtonFor(r => r.CocomoIIEDItems[i].SelectedItem, Model.CocomoIIEDItems[i].low)
+            </td>
+            <td class="td">
+                @Html.HiddenFor(x => x.CocomoIIEDItems[i].nominal)
+                @Html.RadioButtonFor(r => r.CocomoIIEDItems[i].SelectedItem, Model.CocomoIIEDItems[i].nominal)
+            </td>
+            <td class="td">
+                @Html.HiddenFor(x => x.CocomoIIEDItems[i].high)
+                @Html.RadioButtonFor(r => r.CocomoIIEDItems[i].SelectedItem, Model.CocomoIIEDItems[i].high)
+            </td>
+            <td class="td">
+                @Html.HiddenFor(x => x.CocomoIIEDItems[i].veryhigh)
+                @Html.RadioButtonFor(r => r.CocomoIIEDItems[i].SelectedItem, Model.CocomoIIEDItems[i].veryhigh)
+            </td>
+            <td class="td">
+                @Html.HiddenFor(x => x.CocomoIIEDItems[i].extrahigh)
+                @Html.RadioButtonFor(r => r.CocomoIIEDItems[i].SelectedItem, Model.CocomoIIEDItems[i].extrahigh)
+            </td>
+        </tr>
+        }
+        </table>
+    </div>
+    <div style="position:relative">
+        @*big table*@
+        <table class="table-bordered indexes-table">
+            <tr>
+                <td class="name"><b>Атрибути вартості</b></td>
+                <td class="td" width="50px">very low</td>
+                <td class="td" width="50px">low</td>
+                <td class="td" width="50px">nominal</td>
+                <td class="td" width="50px">high</td>
+                <td class="td" width="50px">very high</td>
+                <td class="td" width="50px">extra high</td>
+            </tr>
+
+            @for (var i = 0; i < @Model.CocomoIIScaleItems.Count(); i++)
+        {
+                <tr>
+                    <td class="name">@Html.HiddenFor(x => x.CocomoIIScaleItems[i].name) <b>@Model.CocomoIIScaleItems[i].name</b></td>
+                    <td class="td">
+                        @Html.HiddenFor(x => x.CocomoIIScaleItems[i].verylow)
+                        @Html.RadioButtonFor(r => r.CocomoIIScaleItems[i].SelectedItem, Model.CocomoIIScaleItems[i].verylow)
+                    </td>
+                    <td class="td">
+                        @Html.HiddenFor(x => x.CocomoIIScaleItems[i].low)
+                        @Html.RadioButtonFor(r => r.CocomoIIScaleItems[i].SelectedItem, Model.CocomoIIScaleItems[i].low)
+                    </td>
+                    <td class="td">
+                        @Html.HiddenFor(x => x.CocomoIIScaleItems[i].nominal)
+                        @Html.RadioButtonFor(r => r.CocomoIIScaleItems[i].SelectedItem, Model.CocomoIIScaleItems[i].nominal)
+                    </td>
+                    <td class="td">
+                        @Html.HiddenFor(x => x.CocomoIIScaleItems[i].high)
+                        @Html.RadioButtonFor(r => r.CocomoIIScaleItems[i].SelectedItem, Model.CocomoIIScaleItems[i].high)
+                    </td>
+                    <td class="td">
+                        @Html.HiddenFor(x => x.CocomoIIScaleItems[i].veryhigh)
+                        @Html.RadioButtonFor(r => r.CocomoIIScaleItems[i].SelectedItem, Model.CocomoIIScaleItems[i].veryhigh)
+                    </td>
+                    <td class="td">
+                        @Html.HiddenFor(x => x.CocomoIIScaleItems[i].extrahigh)
+                        @Html.RadioButtonFor(r => r.CocomoIIScaleItems[i].SelectedItem, Model.CocomoIIScaleItems[i].extrahigh)
+                    </td>
+                </tr>
+        }
+        </table>
+    </div>
+    @Html.HiddenFor(x => x.PM)
+    <input type="submit" value="Розрахувати" />
+</form>

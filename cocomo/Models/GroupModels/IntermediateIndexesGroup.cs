@@ -10,7 +10,7 @@ namespace cocomo.Models.GroupModels
     {
         [XmlArray("intermediateIndexes")]
         [XmlArrayItem("indexes")]
-        public IntermediateIndexesItem[] SmallTable { get; set; }
+        public BasicIndexesItem[] SmallTable { get; set; }
 
         [XmlArray("intertmediateValue")]
         [XmlArrayItem("indexes")]

@@ -3,12 +3,15 @@
 namespace cocomo.Models.ItemModels
 {
     [XmlRoot("indexes")]
-    public class CocomoIIScaleItem
+    public class CocomoIIEDItem
     {
         public double SelectedItem { get; set; }
 
         [XmlAttribute]
         public string name { get; set; }
+
+        [XmlAttribute]
+        public double extralow { get; set; }
 
         [XmlAttribute]
         public double verylow { get; set; }
@@ -26,6 +29,6 @@ namespace cocomo.Models.ItemModels
         public double veryhigh { get; set; }
 
         [XmlAttribute]
-        public double extrahigh { get; set; } 
+        public double extrahigh { get; set; }
     }
 }

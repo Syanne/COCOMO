@@ -27,13 +27,14 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("COCOMO", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("BasicIndexes", "BasicIndexes", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Базовий", "BasicIndexes", "Home")</li>
+                    <li>@Html.ActionLink("Проміжний", "Intermediate", "Home")</li>
+                    <li>@Html.ActionLink("Початкова фаза", "CocomoIIEarlyDesign", "Home")</li>
+                    <li>@Html.ActionLink("Пост-Архітектурний", "CocomoIIPA", "Home")</li>
                 </ul>
             </div>
         </div>
@@ -42,7 +43,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - COCOMO Calculator</p>
         </footer>
     </div>
 
