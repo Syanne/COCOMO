@@ -1,0 +1,82 @@
+﻿@model cocomo.Models.GroupModels.IntermediateIndexesGroup
+@{
+    ViewBag.Title = "Intermediate";
+}
+
+<h2>Проміжний рівень COCOMO</h2>
+
+<form method="post" action="">   
+
+    <label>KSLOC: </label> @Html.EditorFor(x => x.Size) <br />
+
+    <table class="table-bordered indexes-table">
+        <tr>
+            <td class="name" ><b></b>Оберіть тип проекту:</td>
+            <td class="td" width="50px">a</td>
+            <td class="td" width="50px">b</td>
+            <td class="td" width="50px">c</td>
+            <td class="td" width="50px">d</td>
+        </tr>
+        @for (var i = 0; i < @Model.SmallTable.Count(); i++)
+        {
+            <tr>
+                <td class="name">
+                        @Html.HiddenFor(x => x.SmallTable[i].ID)
+                        @Html.RadioButtonFor(r => r.SelectedIndexes, Model.SmallTable[i].ID)
+                        @Html.HiddenFor(x => x.SmallTable[i].name) <b>@Model.SmallTable[i].name</b>
+                </td>
+                <td class="td" >@Html.HiddenFor(x => x.SmallTable[i].a) @Model.SmallTable[i].a</td>
+                <td class="td">@Html.HiddenFor(x => x.SmallTable[i].b) @Model.SmallTable[i].b</td>
+                <td class="td">@Html.HiddenFor(x => x.SmallTable[i].c) @Model.SmallTable[i].c</td>
+                <td class="td">@Html.HiddenFor(x => x.SmallTable[i].d) @Model.SmallTable[i].d</td>
+            </tr>
+        }
+    </table>
+
+    @*bit table*@
+    <table class="table-bordered indexes-table">
+        <tr>
+            <td class="name"><b>Атрибути вартості</b></td>
+            <td class="td" width="50px">very low</td>
+            <td class="td" width="50px">low</td>
+            <td class="td" width="50px">middle</td>
+            <td class="td" width="50px">high</td>
+            <td class="td" width="50px">very high</td>
+            <td class="td" width="50px">critical</td>
+        </tr>
+        @for (var i = 0; i < @Model.BigTable.Count(); i++)
+        {
+            <tr>
+                <td class="name">@Html.HiddenFor(x => x.BigTable[i].name) <b>@Model.BigTable[i].name</b></td>
+                <td class="td">
+                        @Html.HiddenFor(x => x.BigTable[i].verylow)
+                        @Html.RadioButtonFor(r => r.BigTable[i].SelectedItem, Model.BigTable[i].verylow) 
+                </td>
+                <td class="td">
+                    @Html.HiddenFor(x => x.BigTable[i].low)
+                    @Html.RadioButtonFor(r => r.BigTable[i].SelectedItem, Model.BigTable[i].low)
+                </td>
+                <td class="td">
+                    @Html.HiddenFor(x => x.BigTable[i].middle)
+                    @Html.RadioButtonFor(r => r.BigTable[i].SelectedItem, Model.BigTable[i].middle)
+                </td>
+                <td class="td">
+                    @Html.HiddenFor(x => x.BigTable[i].high)
+                    @Html.RadioButtonFor(r => r.BigTable[i].SelectedItem, Model.BigTable[i].high)
+                </td>
+                <td class="td">
+                    @Html.HiddenFor(x => x.BigTable[i].veryhigh)
+                    @Html.RadioButtonFor(r => r.BigTable[i].SelectedItem, Model.BigTable[i].veryhigh)
+                </td>
+                <td class="td">
+                    @Html.HiddenFor(x => x.BigTable[i].critical)
+                    @Html.RadioButtonFor(r => r.BigTable[i].SelectedItem, Model.BigTable[i].critical)
+                </td>
+            </tr>
+        }
+    </table>
+
+    @Html.HiddenFor(x => x.TM)
+    @Html.HiddenFor(x => x.PM)
+    <input type="submit" value="Save" />
+</form>

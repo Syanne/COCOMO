@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<IndexCollection>
+  <table>
+    <row name="organic projects">
+      <a value="2.4"/>
+      <b value="1.05"/>
+      <c value="2.5"/>
+      <d value="0.38"/>
+    </row>
+    <row name="embedded projects">
+      <a value="3.0"/>
+      <b value="1.12"/>
+      <c value="2.5"/>
+      <d value="0.35"/>
+    </row>
+    <row name="semidetached projects">
+      <a value="3.6"/>
+      <b value="1.2"/>
+      <c value="2.5"/>
+      <d value="0.32"/>
+    </row>
+  </table>
+</IndexCollection>

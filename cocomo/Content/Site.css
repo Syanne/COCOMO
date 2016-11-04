@@ -22,3 +22,35 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.indexes-table{
+    margin-bottom: 50px;
+}
+.td{
+    padding: 5px;
+    border: 1px thin;
+    border-color: black;
+    font: 14px;
+    min-width: 50px ;
+    text-align:center;
+}
+
+table.fixed {
+    table-layout: fixed;
+}
+    table.fixed td {
+        overflow: hidden;
+        word-wrap: break-word;
+        width: 50px;
+    }
+
+td.name {
+    padding: 5px;
+    border: 1px thin;
+    border-color: black;
+    font: 14px;
+    min-width: 50px ;
+}
+input{
+    margin:10px;
+}

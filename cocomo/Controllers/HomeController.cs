@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using cocomo.Models.GroupModels;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace cocomo.Controllers
@@ -9,22 +7,54 @@ namespace cocomo.Controllers
     public class HomeController : Controller
     {
         public ActionResult Index()
-        {
+        {            
             return View();
         }
 
-        public ActionResult About()
+        #region Basic Indexes
+        [HttpGet]
+        public ActionResult BasicIndexes()
         {
-            ViewBag.Message = "Your application description page.";
+            BasicIndexesGroup basicIndexesGroup = new BasicIndexesGroup();
+            Deserializer.Deserialize(ref basicIndexesGroup);
+            return View(basicIndexesGroup);
+        }
+        
+        [HttpPost]
+        public ActionResult BasicIndexes(double basicIndexesGroup)
+        {
+            return View(basicIndexesGroup);
+        }
+        #endregion
 
-            return View();
+        #region Intermediate
+        [HttpGet]
+        public ActionResult Intermediate()
+        {
+            IntermediateIndexesGroup intermediateIndexesGroup = new IntermediateIndexesGroup();
+            Deserializer.Deserialize(ref intermediateIndexesGroup);
+            return View(intermediateIndexesGroup);
         }
 
-        public ActionResult Contact()
+        [HttpPost]
+        public ActionResult Intermediate(IntermediateIndexesGroup intermediateIndexesGroup)
         {
-            ViewBag.Message = "Your contact page.";
+            return View(intermediateIndexesGroup);
+        }
+        #endregion
 
+        #region Early Design
+        public ActionResult CocomoIIEarlyDesign()
+        {
             return View();
         }
+        #endregion
+
+        #region Post Architecture
+        public ActionResult CocomoIIPA()
+        {
+            return View();
+        }
+        #endregion
     }
 }

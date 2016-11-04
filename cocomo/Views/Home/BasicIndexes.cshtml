@@ -1,0 +1,38 @@
+﻿@model cocomo.Models.GroupModels.BasicIndexesGroup
+
+@{
+    ViewBag.Title = "Basic Indexes";
+}
+<h2>Базовий рівень COCOMO</h2>
+<form method="post" action="">
+    <label>KSLOC: </label> @Html.EditorFor(x => x.Size) <br />
+
+    <table class="table-bordered indexes-table">
+        <tr>
+            <td class="name"><b></b>Оберіть тип проекту: </td>
+            <td class="td" width="50px">a</td>
+            <td class="td" width="50px">b</td>
+            <td class="td" width="50px">c</td>
+            <td class="td" width="50px">d</td>
+        </tr>
+        @for (var i = 0; i < @Model.Indexes.Count(); i++)
+        {
+            <tr>
+                <td class="name">
+                    @Html.HiddenFor(x => x.Indexes[i].ID)
+                    @Html.RadioButtonFor(r => r.SelectedIndexes, Model.Indexes[i].ID)
+                    @Html.HiddenFor(x => x.Indexes[i].name) <b>@Model.Indexes[i].name</b>
+                </td>
+                <td class="td">@Html.HiddenFor(x => x.Indexes[i].a) @Model.Indexes[i].a</td>
+                <td class="td">@Html.HiddenFor(x => x.Indexes[i].b) @Model.Indexes[i].b</td>
+                <td class="td">@Html.HiddenFor(x => x.Indexes[i].c) @Model.Indexes[i].c</td>
+                <td class="td">@Html.HiddenFor(x => x.Indexes[i].d) @Model.Indexes[i].d</td>
+            </tr>
+        }
+    </table>
+
+    @Html.HiddenFor(x => x.TM) 
+    @Html.HiddenFor(x => x.PM)        
+    <input type="submit" value="Розрахувати" />
+</form>
+

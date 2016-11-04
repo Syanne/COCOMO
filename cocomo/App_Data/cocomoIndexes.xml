@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<table>
+  <!--basic-->
+  <basicIndexes>
+    <indexes ID="0" name="поширений" a="2.4" b="1.05" c="2.5" d="0.38"/>
+    <indexes ID="1" name="напівнезалежний" a="3.0" b="1.12" c="2.5" d="0.35"/>
+    <indexes ID="2" name="вбудований" a="3.6" b="1.2" c="2.5" d="0.32"/>
+  </basicIndexes>
+  <!--intermadiate-->
+  <intertmediateValue>
+    <indexes ID="0" verylow="0.75" low="0.88" middle="1" high="1.15" veryhigh="1.4" critical="0" name="Необхідна надійність ПЗ "/>
+    <indexes ID="1" verylow="0" low="0.94" middle="1" high="1.08" veryhigh="1.16" critical="0" name="Розмір БД додатка "/>
+    <indexes ID="2" verylow="0.7" low="0.85" middle="1" high="1.15" veryhigh="1.3" critical="0" name="Складність продукту"/>
+    <indexes ID="3" verylow="0" low="0" middle="1" high="1.11" veryhigh="1.3" critical="0" name="Обмеження швидкодії "/>
+    <indexes ID="4" verylow="0" low="0" middle="1" high="1.06" veryhigh="1.21" critical="0" name="Обмеження пам'яті "/>   
+    <indexes ID="5" verylow="0" low="0.87" middle="1" high="1.15" veryhigh="1.3" critical="0" name="Нестійкість оточення віртуальної машини "/>
+    <indexes ID="6" verylow="0" low="0.87" middle="1" high="1.07" veryhigh="1.15" critical="0" name="Необхідний час відновлення "/>
+    <indexes ID="7" verylow="1.46" low="1.19" middle="1" high="0.86" veryhigh="0.71" critical="0" name="Аналітичні здібності "/>
+    <indexes ID="8" verylow="1.29" low="1.13" middle="1" high="0.91" veryhigh="0.82" critical="0" name="Досвід розробки"/>
+    <indexes ID="9" verylow="1.42" low="1.17" middle="1" high="0.86" veryhigh="0.7" critical="0" name="Здібності до розробки ПЗ "/>
+    <indexes ID="10" verylow="1.21" low="1.1" middle="1" high="0.9" veryhigh="0" critical="0" name="Досвід використання віртуальних машин "/>
+    <indexes ID="11" verylow="1.14" low="1.07" middle="1" high="0.95" veryhigh="0" critical="0" name="Досвід розробки на мовах програмування"/>
+    <indexes ID="12" verylow="1.24" low="1.1" middle="1" high="0.91" veryhigh="0.82" critical="0" name="Застосування методів розробки ПЗ "/>
+    <indexes ID="13" verylow="1.24" low="1.1" middle="1" high="0.91" veryhigh="0.83" critical="0" name="Використання інструментарію розробки ПЗ"/>
+    <indexes ID="14" verylow="1.23" low="1.08" middle="1" high="1.04" veryhigh="1.1" critical="0" name=" Вимоги дотримання графіка розробки "/>
+  </intertmediateValue>
+
+  <intermediateIndexes>
+    <indexes ID="0" name="поширений" a="3.2" b="1.05" c="2.5" d="0.38"/>
+    <indexes ID="1" name="напівнезалежний" a="3.0" b="1.12" c="2.5" d="0.35"/>
+    <indexes ID="2" name="вбудований" a="2.8" b="1.2" c="2.5" d="0.32"/>
+  </intermediateIndexes>
+
+  <cocomoIIScale>
+    <indexes ID="0" verylow="6.20" low="4.96" nominal="3.72" high="2.48" veryhigh="1.24" extrahigh="0" name="PREC"/>
+    <indexes ID="1" verylow="5.07" low="4.05" nominal="3.04" high="2.03" veryhigh="1.01" extrahigh="0" name="FLEX"/>
+    <indexes ID="2" verylow="7.07" low="5.65" nominal="4.24" high="2.83" veryhigh="1.41" extrahigh="0" name="RESL"/>
+    <indexes ID="3" verylow="5.48" low="4.38" nominal="3.29" high="2.19" veryhigh="1.10" extrahigh="0" name="TEAM"/>
+    <indexes ID="4" verylow="7.80" low="6.24" nominal="4.68" high="3.12" veryhigh="1.56" extrahigh="0" name="PMAT"/>
+  </cocomoIIScale>
+
+  <cocomoIIEarlyDesign>
+    <indexes ID="0" extralow="2.12" verylow="1.62" low="1.26" nominal="1" high="0.83" veryhigh="0.63" extrahigh="0.50" name="PERS"/>
+    <indexes ID="1" extralow="1.59" verylow="1.33" low="1.22" nominal="1" high="0.87" veryhigh="0.74" extrahigh="0.62" name="PREX"/>
+    <indexes ID="2" extralow="0.49" verylow="0.60" low="0.83" nominal="1" high="1.33" veryhigh="1.91" extrahigh="2.72" name="PCPX"/>
+    <indexes ID="3" extralow="0" verylow="0" low="0.95" nominal="1" high="1.07" veryhigh="1.15" extrahigh="1.24" name="RUSE"/>
+    <indexes ID="4" extralow="0" verylow="0" low="0.87" nominal="1" high="1.29" veryhigh="1.81" extrahigh="2.61" name="PDIF"/>
+    <indexes ID="5" extralow="1.43" verylow="1.30" low="1.10" nominal="1" high="0.87" veryhigh="0.73" extrahigh="0.62" name="FCIL"/>
+    <indexes ID="6" extralow="0" verylow="1.43" low="1.14" nominal="1" high="1.00" veryhigh="0" extrahigh="0" name="SCED"/>
+  </cocomoIIEarlyDesign>
+
+  <cocomoIIPA>
+    <indexes ID="0" verylow="1.42" low="1.29" nominal="1" high="0.85" veryhigh="0.71" extrahigh="0" name="Analyst Capability"/>
+    <indexes ID="1" verylow="1.22" low="1.10" nominal="1" high="0.88" veryhigh="0.81" extrahigh="0" name="Applications Experience"/>
+    <indexes ID="2" verylow="1.34" low="1.15" nominal="1" high="0.88" veryhigh="0.76" extrahigh="0" name="Programmer Capability "/>
+    <indexes ID="3" verylow="1.29" low="1.12" nominal="1" high="0.90" veryhigh="0.81" extrahigh="0" name="Personnel Continuity "/>
+    <indexes ID="4" verylow="1.19" low="1.09" nominal="1" high="0.91" veryhigh="0.85" extrahigh="0" name="Platform Experience "/>
+    <indexes ID="5" verylow="1.20" low="1.09" nominal="1" high="0.91" veryhigh="0.84" extrahigh="0" name="Language and Tool Experience "/>
+    
+    <indexes ID="6" verylow="0.84" low="0.92" nominal="1" high="1.10" veryhigh="1.26" extrahigh="0" name="Required Software Reliability "/>
+    <indexes ID="7" verylow="0" low="0.23" nominal="1" high="1.14" veryhigh="1.28" extrahigh="0" name="Database Size"/>
+    <indexes ID="8" verylow="0.73" low="0.87" nominal="1" high="1.17" veryhigh="1.34" extrahigh="1.74" name="Software Product Complexity"/>
+    <indexes ID="9" verylow="0" low="0.95" nominal="1" high="1.07" veryhigh="1.15" extrahigh="1.24" name="Required Reusability "/>
+    <indexes ID="10" verylow="0.81" low="0.91" nominal="1" high="1.11" veryhigh="1.23" extrahigh="0" name="Documentation Match to LifeCycle Needs"/>
+    
+    <indexes ID="11" verylow="0" low="0" nominal="1" high="1.11" veryhigh="1.29" extrahigh="1.63" name="Execution Time Constraint"/>
+    <indexes ID="12" verylow="0" low="0" nominal="1" high="1.05" veryhigh="1.17" extrahigh="1.46" name="Main Storage Constraint"/>
+    <indexes ID="13" verylow="0" low="0.87" nominal="1" high="1.15" veryhigh="1.30" extrahigh="0" name="Platform Volatility"/>
+    
+    <indexes ID="14" verylow="1.17" low="1.09" nominal="1" high="0.90" veryhigh="0.78" extrahigh="0" name="Use of Software Tools"/>
+    <indexes ID="15" verylow="1.22" low="1.09" nominal="1" high="0.93" veryhigh="0.86" extrahigh="0.80" name="Multisite Development"/>
+    <indexes ID="16" verylow="1.43" low="1.14" nominal="1" high="1.00" veryhigh="1.00" extrahigh="0" name="Required Development Schedule"/>
+  </cocomoIIPA>
+</table>
