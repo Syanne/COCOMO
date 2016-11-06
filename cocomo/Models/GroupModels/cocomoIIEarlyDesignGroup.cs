@@ -8,8 +8,6 @@ namespace cocomo.Models.GroupModels
     [XmlRoot("table")]
     public class CocomoIIEDGroup
     {
-        public string GroupName { get; set; }
-
         [XmlArray("cocomoIIEarlyDesign")]
         [XmlArrayItem("indexes")]
         public CocomoIIEDItem[] CocomoIIEDItems { get; set; }
@@ -18,14 +16,14 @@ namespace cocomo.Models.GroupModels
         [XmlArrayItem("indexes")]
         public CocomoIIScaleItem[] CocomoIIScaleItems { get; set; }
 
-        private double A { get; set; } = 2.42;
-        private double B = 0.91;
+        const double A = 2.42;
+        const double B = 0.91;
 
         private double E
         {
             get
             {
-                return 0.91 * 0.01 * CocomoIIScaleItems.Sum(x => x.SelectedItem);
+                return 0.91 + 0.01 * CocomoIIScaleItems.Sum(x => x.SelectedItem);
             }
             set { }
         }
@@ -51,13 +49,10 @@ namespace cocomo.Models.GroupModels
         {
             get
             {
-                double PMs = 1;
-                for (int i = 0; i < CocomoIIEDItems.Count() - 1; i++)
-                    PMs *= CocomoIIEDItems[i].SelectedItem;
+                double power = 0.28 + 0.2 * (E - B);
+                double SCED = CocomoIIEDItems.LastOrDefault().SelectedItem;
 
-                double power = 0.28 + 0.2 * E - B;
-
-                return CocomoIIEDItems.LastOrDefault().SelectedItem * 3.67 * Math.Pow(PMs, power);
+                return SCED * 3.67 * Math.Pow(PM/SCED, power);
             }
             set { }
         }
@@ -66,6 +61,5 @@ namespace cocomo.Models.GroupModels
         /// количество строк кода
         /// </summary>
         public long Size { get; set; }
-
     }
 }

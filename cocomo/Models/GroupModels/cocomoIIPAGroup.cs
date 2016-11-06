@@ -29,14 +29,11 @@ namespace cocomo.Models.GroupModels
         {
             get
             {
-                return B * 0.01 * CocomoIIScaleItems.Sum(x => x.SelectedItem);
+                return B + 0.01 * CocomoIIScaleItems.Sum(x => x.SelectedItem);
             }
             set { }
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
+        
         public double PM
         {
             get
@@ -49,28 +46,19 @@ namespace cocomo.Models.GroupModels
             }
             set { }
         }
-
-        /// <summary>
-        /// трудоемкость
-        /// </summary>
+        
         public double TM
         {
             get
             {
-                double PMs = 1;
-                for (int i = 0; i < CocomoIIPAItems.Count() - 1; i++)
-                    PMs *= CocomoIIPAItems[i].SelectedItem;
+                double power = 0.28 + 0.2 * (E - B);
+                double SCED = this.CocomoIIPAItems.LastOrDefault().SelectedItem;
 
-                double power = 0.28 + 0.2 * E - B;
-
-                return CocomoIIPAItems.LastOrDefault().SelectedItem * 3.67 * Math.Pow(PMs, power); 
+                return SCED * 3.67 * Math.Pow(PM / SCED, power);
             }
             set { }
         }
-
-        /// <summary>
-        /// количество строк кода
-        /// </summary>
+        
         public long Size { get; set; }
     }
 }
